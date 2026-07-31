@@ -44,3 +44,6 @@
 - Clarified Git upstream relationships by illustrating them in notebooks and asking questions with AI assistance.
 
 ### Key Takeaway
+- Learned the product development process is not only about coding but also understanding problems faced by users and existing solutions and make informed decisions.
+- Improved my understanding of Git workflow, especially how local branches connect with upstream branches through upstream relationships.
+- Documentation and research are essential parts of the development process to keep track of learning progress and decisions.
