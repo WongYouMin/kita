@@ -35,9 +35,11 @@
 ### Challenge
 - Could not try to become BonusLink merchant as I do not have a valid business.
 - Not within the region that supports Square Loyalty feature.
+- Git upstream relationship is confusing.
 
 ### Solution
 - Getting information of BonusLink merchant with AI assistance and user interface snapshots on websites.
 - Read information and watch introductory video of Square Loyalty at Square official portal help section.
+- Clarified Git upstream relationships by illustrating them in notebooks and asking questions with AI assistance.
 
 ### Key Takeaway
