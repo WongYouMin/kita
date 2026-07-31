@@ -5,7 +5,7 @@
 Goal: Build a working MVP and understand frontend development
 
 Features:
-1. Dashboard: Provide quick overview for total customers, rewards and transactions
+1. Dashboard: Provide quick overview for total customers, reward redemptions and loyalty transactions.
 2. Customer Management: CRUD to customers
 3. Reward Management: CRUD to rewards
 4. Loyalty Points: Add points to customer and view current points
