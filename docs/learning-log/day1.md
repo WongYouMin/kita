@@ -30,6 +30,7 @@
 - `-u` create upstreams (default relationship between current local and remote branch) tracking relationship
 - `main` is the remote branch to be pushed to
 - upstream relationship needs to be redefined when pushing the same local branch to a different remote branch
+- upstream relationship needs to be created when pushing a new local branch to a new remote branch
 
 
 ### Challenge
