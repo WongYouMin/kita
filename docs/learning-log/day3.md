@@ -57,7 +57,11 @@ There are two data type values:
 - Completed hands-on practice in [Exercise 1 and Exercise 2](../../backend/exercise).
 
 ### Challenges
+- Understanding the mutability of JavaScript data value is confusing.
 
 ### Solution
+- More attempts are made to understand the concept of data value mutability.
+- Used blurting as an active recall technique to evaluate my understanding to new concept.
 
 ### Key Takeaway
+- JavaScript variables can store either primitive values or reference values. Understanding data value mutability helps explain how JavaScript handles value assignment and object modification.
