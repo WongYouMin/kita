@@ -1,6 +1,6 @@
 # Learning Log
 
-## Day 6 (19 Aug 2026)
+## Day 7 (19 Aug 2026)
 
 ### What I Learned
 
