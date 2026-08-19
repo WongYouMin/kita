@@ -10,7 +10,7 @@
     - `validateReward()` validates the reward, less likely to have boolean return value
 - Strict equality operator `===` ensures matching value and data type, which is essential in validation.
         
-- Completed [Exercise 6, 7 and 8, Test 3 and 4](../../backend/exercise/).
+- Completed [Exercise 6, 7 and 8, Test 4](../../backend/exercise/).
 - Learned about callback functions. Callback function is a function that is passed as an argument of another function.
     - Callback function exists in both the form of arrow and normal function.
     - Example:
