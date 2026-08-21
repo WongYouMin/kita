@@ -1,6 +1,6 @@
 # Learning Log
 
-## Day 8 (20 Aug 2026)
+## Day 8 (21 Aug 2026)
 
 ### What I Learned
 - Learned about object destructuring. It is a convenient way to extract property value of an object.
