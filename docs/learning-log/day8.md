@@ -3,6 +3,7 @@
 ## Day 8 (21 Aug 2026)
 
 ### What I Learned
+- Completed [Exercise 9, 10 and Test 5](../../backend/exercise/)
 - Learned about object destructuring. It is a convenient way to extract property value of an object.
     - The composition of object destructuring:
         ```
