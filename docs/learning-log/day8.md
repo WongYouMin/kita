@@ -23,6 +23,7 @@
 2. Curly braces `{}` to extract property from an object
 3. Property to be extracted is placed in curly braces
     - this example: `name`, `age`, `membership` and `points` will be extracted
+    - note that property to be extracted should be spelled exactly as property defined
 4. Assignment operator `=` to assign object for extraction
 5. Object to be extracted
     - this example: `customer`
