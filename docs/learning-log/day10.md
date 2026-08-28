@@ -158,7 +158,7 @@
     - At function call of `calculateTotal`, `prices` array is spreaded and passed as individual arguments to function parameters.
     - In this example, `prices.length` is 3, so 3 array items is sent as arguments to function parameter as `price1`, `price2` and `price3`
 
-### Part 7: Rest Parameter
+### Rest Parameter
 - Given the situation when the number of arguments is unknown, rest parameter can be used to collect received arguments as an array.
         ```
         function calculateTotal(...prices){
