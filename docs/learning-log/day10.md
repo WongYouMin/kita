@@ -10,8 +10,8 @@
 - Completed [Test 10](../../backend/exercise/test-10.js)
 
 ### Spread Syntax
-- Learned about spread syntax which is used to spread iterables into individual items.
-- Iterables include array, object or string.
+- Learned about spread syntax which is used to spread iterables into individual items or spread an object's properties.
+- Iterables include array and string.
 
 ### Part 1: Introduction
 - Given the array below, copy and spread items of `fruits` to `copy` with `spread` syntax
@@ -36,14 +36,14 @@
     ```
     const frontendSkills = ["HTML", "CSS"];
     const backendSkills = ["Node.js", "MongoDB"];
-    const fullStackSkills = [...frontEndSkills, ...backendSkills, 'JavaScript'];
+    const fullStackSkills = [...frontendSkills, ...backendSkills, 'JavaScript'];
 
     // Expected Output: ["HTML", "CSS", "Node.js", "MongoDB", 'JavaScript'];
     console.log(fullStackSkills);
     ```
 
 ### Part 3: Copying and Modifying Arrays
-- Given the `ingredient` array below.
+- Given the `ingredients` array below.
 - Create a new array called `updatedIngredients` that contains everything from `ingredients` and `"Onion"`
     ```
     const ingredients = ["Rice", "Chicken", "Carrot"];
@@ -57,10 +57,10 @@
 - Given the `employee` object below, copy and spread properties of `employee` to `employeeCopy`
     ```
     const employee = {
-    name: "Nora",
-    role: "Developer",
-    department: "Engineering"
-    };
+        name: "Nora",
+        role: "Developer",
+        department: "Engineering"
+        };
 
     const employeeCopy = { ...employee };
 
@@ -136,7 +136,7 @@
     ```
     - `updatedCustomer` is a new object being created.
     - The `customer`'s properties are spreaded and copied to `updatedCustomer`.
-    - Shallow copy occurs at nested object or array. 
+    - Shallow copy occurs at nested object or array which is copied and spreaded by `spread` syntax. Only the top-level structure is copied, while the nested objects or arrays being referenced.
     - In this example, shallow copy occurs at `contact` property. Its value is a nested object. 
     - When the value is copied and assigned to `updatedCustomer`, both `customer.contact` and `updatedCustomer.contact` reference the same object.
     - To update `phone` of `updatedCustomer.contact` to `"019-8888888"` without modifying `customer.contact`, `spread` syntax is used to spread and copy properties of `customer.contact` to `updatedCustomer.contact`, replacing its earlier referenced object with a new object.
