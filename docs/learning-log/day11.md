@@ -1,6 +1,6 @@
 # Learning Log
 
-## Day 11 (3 Sept 2026)
+## Day 11 (4 Sept 2026)
 
 ### What I Practiced
 - Completed [Exercise 14](../../backend/exercise/exercise-14.js)
