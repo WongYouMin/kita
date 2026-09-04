@@ -4,7 +4,7 @@
 
 ### What I Practiced
 - Completed [Exercise 14](../../backend/exercise/exercise-14.js)
-- Completed [Exercise 15](../../backend/exercise/test11.js)
+- Completed [Test 11](../../backend/exercise/test11.js)
 
 ### Asynchronous Programming
 - Synchronous operation will execute each statement only after completing the previous statement.
