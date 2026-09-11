@@ -184,3 +184,55 @@ export default RewardList
 11. The `rewards` property is overwritten with a new array, spreading `previousCustomer.rewards`, and added with the new reward object.
 12. The new object is returned as the updated state from `setCustomer`, which also triggers the re-rendering of user interface by React.
 - Note: Using `Date.now()` is not a reliable method to generate unique IDs
+
+### Computed Property
+````
+const name = "customerName";
+
+const customer = {
+    name: "Amy",
+    [name]: "Bob"
+};
+
+console.log(customer);
+````
+- Expected Output: `{name: "Amy", customerName: "Bob"}`
+- Without the square bracket `[]`, `name` becomes the property of `customer`
+- With the square bracket `[]`, the expression within the square bracket is evaluated. The `name` is evaluated to `"customerName"`. Therefore, `customerName` becomes the property of `customer`.
+- Computed property is really useful if multiple properties of a state is updated in the same function.
+- Example usage: Updating name and email input fields
+    ```
+    // App.jsx
+    import {useState} from "react";
+
+    function App () {
+        const [customer, setCustomer] = useState({
+            name: "",
+            email: ""
+        });
+
+        const updateCustomer = (event) => {
+            setCustomer((previousCustomer) => ({
+                ...previousCustomer,
+                [event.target.name]: event.target.value
+            }));
+        };
+
+        return(
+            <>
+                <label>Name</label>
+                <input type="text" name="name" value={customer.name} onChange={updateCustomer}/>
+                <label>Email</label>
+                <input type="email" name="email" value={customer.email} onChange={updateCustomer}/>
+
+                <p>Name: {customer.name}</p>
+                <p>Email: {customer.email}</p>
+            </>
+        )
+    }
+    
+    ```
+    - In `updateCustomer()`, only the property which matches the `event.target.name` will be updated. 
+    - The spread syntax of `...previousCustomer` preserves the object properties by copying all properties and values of previousCustomer state. 
+    - The computed property determines the property to be updated based on `event.target.name`.
+    - The value of the property is then overwritten with the `event.target.value`.
