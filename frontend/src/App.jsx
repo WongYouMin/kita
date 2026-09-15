@@ -1,107 +1,80 @@
-import { useState } from "react"
-import CustomerCard from "./CustomerCard";
-import RewardList from "./RewardList";
-function App(){
-const [customer, setCustomer] = useState({
-  name: "Mia",
-  points: 500,
-  isMember: false,
-  rewards: [
-    { id: 1, name: "Free Coffee" },
-    { id: 2, name: "10% Discount" }
-  ]
-});
+import { useState } from "react";
+import "./App.css"
 
-const [newReward, setNewReward] = useState("");
-
-const updateCustomerPoints = () => {
-  setCustomer((previousCustomer) => ({
-      ...previousCustomer,
-      points: previousCustomer.points + 100
-  }));
-};
-
-const updateCustomerStatus = () => {
-  setCustomer((previousCustomer) => {
-    return {
-      ...previousCustomer,
-      isMember: !previousCustomer.isMember
-    };
+function App() {
+  const [customer, setCustomer] = useState({
+    name: "",
+    email: "",
+    membership: false
   });
-};
 
-const updateRewardInput = (event) => {
-  setNewReward(event.target.value);
-};
+  const [errors, setErrors] = useState({});
 
-const updateReward = (event) => {
-  setCustomer((previousCustomer) => {
-    if(!event.target.value.trim()){
-      return {
-        ...previousCustomer
-      };
+  const updateCustomer = (event) => {
+    setCustomer((previousCustomer) => {
+      return (
+        {
+          ...previousCustomer,
+          [event.target.name] : event.target.name === "membership"
+            ? event.target.checked
+            : event.target.value
+        }
+      )
+    })
+  };
+
+  const saveCustomer = (event) => {
+    event.preventDefault();
+    if(!customer.name.trim() || !customer.email.trim() || !customer.email.includes('@')){
+      const validationErrors = {};
+      if(!customer.name.trim()){
+        validationErrors.name = "Name is required.";
+      }
+
+      if(!customer.email.trim()){
+        validationErrors.email = "Email is required.";
+      } else if(!customer.email.includes('@')){
+        validationErrors.email = "Email must contain @.";
+      }
+      setErrors(validationErrors);
+    } else {
+      console.log(customer);
+      clearForm();
     }
-    const updatedRewards = [
-      ...previousCustomer.rewards, 
-      {
-        id: Date.now(),
-        name: event.target.value.trim()
-      }
-    ];
-    setNewReward("");
-    return {
-      ...previousCustomer,
-      rewards: updatedRewards
-    };
-  });
-};
+  };
 
-const deleteReward = (event) => {
-  setCustomer((previousCustomer) => {
-    const updatedRewards = previousCustomer.rewards.filter((reward) => reward.id !== Number(event.target.value));
-    return {
-      ...previousCustomer,
-      rewards: updatedRewards
-    };
-  });
-};
-
-const editReward = (event) => {
-  setCustomer((previousCustomer) => {
-    const randomRewards = ['Biscoff Cookies', 'Oreo Original', 'Orice Rice Crackers'];
-    const randomIndex = Math.floor(Math.random() * randomRewards.length);
-    const updatedRewards = previousCustomer.rewards.map((reward)=> {
-      if(Number(event.target.value) === reward.id){
-        return {
-          id: reward.id,
-          name: randomRewards[randomIndex]
-        };
-      } else {
-        return reward;
-      }
+  const clearForm = () => {
+    setCustomer({
+      name: "",
+      email: "",
+      membership: false
     });
-    return {
-      ...previousCustomer,
-      rewards: updatedRewards
-    };
-  });
-};
+    setErrors({});
+  };
 
   return(
     <>
-      <CustomerCard
-        customer={customer}
-        updateCustomerPoints={updateCustomerPoints}
-        updateCustomerStatus={updateCustomerStatus}
-      />
-      <h4>Redeemed Rewards</h4>
-      <RewardList
-        rewards={customer.rewards}
-        deleteReward={deleteReward}
-        editReward={editReward}
-      />
-      <input type="text" name="newReward" value={newReward} onChange={updateRewardInput}/>
-      <button name="reward" value={newReward} onClick={updateReward}>[Add Reward]</button>
+      <form onSubmit={saveCustomer}>
+        <label>Name </label>
+        <input type="text" name="name" value={customer.name} onChange={updateCustomer} />
+        <br />
+        <label>Email </label>
+        <input type="email" name="email" value={customer.email} onChange={updateCustomer} />
+        <br />
+        <label>Membership</label>
+        <input type="checkbox" checked={customer.membership} name="membership" onChange={updateCustomer}/>
+        <br />
+        <button type="submit">Save Customer</button>
+      </form>
+
+      <ul>
+        {Object.entries(errors).length > 0 
+            ? Object.entries(errors).map(([props, message]) => {
+              return <li key={props}>⚠️{message}</li>
+            })
+            : null
+        }
+      </ul>
     </>
   )
 }
