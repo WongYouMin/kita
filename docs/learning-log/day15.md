@@ -1,6 +1,6 @@
 # Learning Log
 
-## Day 15 (24 Sept 2026)
+## Day 15 (26 Sept 2026)
 
 ### useEffect
 - useEffect is one of the React Hooks. Just like the other React Hooks, it should be declared within the top level of functional components (outside control statement, loop statement or functions).
