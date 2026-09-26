@@ -1,21 +1,18 @@
-import CustomerCard from './CustomerCard'
-import {Fragment} from "react"
-
-function CustomerList({customers}){
-    return(
-        <>
-            {customers.map(({id, name, points, hasReward}) => {
-                return(
-                    <Fragment key={id}>
-                        {hasReward ? <p>🎁 Reward available!</p> : <p>No reward available</p>}
-                        <CustomerCard
-                            name={name}
-                            points={points}
-                        />
-                    </Fragment>
-                )})
-            }
-        </>
+function CustomerList({customers, error, loading}){
+    return (
+    <>
+        {
+            loading 
+            ? <p>Loading customers...</p>
+            : error
+                ? <p>⚠️{error}</p>
+                : customers.length > 0 
+                ? customers.map(({id, name}) => {
+                    return <p key={id}>{name}</p>
+                })
+                : <p>No customers found.</p>
+        }
+    </>
     )
 }
 
