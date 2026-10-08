@@ -1,24 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from './Home'
-import Customers from './Customers'
-import Rewards from './Rewards'
-import NavBar from "./Navbar"
-import CustomerRewards from "./CustomerRewards"
-import CustomerOverview from "./CustomerOverview"
-import CustomerDetails from "./CustomerDetails"
-
+import Dashboard from './pages/Dashboard'
+import Customers from './pages/Customers'
+import CustomerDetails from './pages/CustomerDetails'
+import Rewards from './pages/Rewards'
+import Transactions from './pages/Transactions'
+import Layout from "./components/Layout"
 function App() {
     return(
         <BrowserRouter>
-            <NavBar/>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/customers" element={<Customers/>}/>
-                <Route path="/customers/:customerId" element={<CustomerDetails/>}>
-                    <Route index element={<CustomerOverview/>}/>
-                    <Route path="rewards" element={<CustomerRewards/>}/>
+                <Route path='/' element={<Layout/>}>
+                    <Route index element={<Dashboard/>}/>
+                    <Route path="customers" element={<Customers/>}/>
+                    <Route path="customers/:customerId" element={<CustomerDetails/>} />
+                    <Route path="rewards" element={<Rewards/>}/>
+                    <Route path="transactions" element={<Transactions/>}/>
                 </Route>
-                <Route path="/rewards" element={<Rewards/>}/>
             </Routes>
        </BrowserRouter>
     )
