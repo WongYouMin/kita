@@ -47,7 +47,7 @@ function Rewards() {
     // Event Handler
     // ==========================================
 
-    // Handle changes made to reward state
+    // Handle input changes made to the reward form
     const handleRewardInputChange = (event) => {
         setReward((previous) => ({
             ...previous,
