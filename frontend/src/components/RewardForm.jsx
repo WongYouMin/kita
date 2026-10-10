@@ -1,4 +1,4 @@
-function RewardForm({editing, handleUpdateReward, handleAddReward, reward, updateRewardState, rewardFormError, discardRewardForm}) {
+function RewardForm({editing, handleUpdateReward, handleAddReward, reward, handleRewardInputChange, rewardFormError, discardRewardForm}) {
     return(
         <div className="reward-form">
              <form onSubmit={editing ? handleUpdateReward : handleAddReward}>
@@ -10,25 +10,25 @@ function RewardForm({editing, handleUpdateReward, handleAddReward, reward, updat
                 <input type="text" 
                     value={reward.title}
                     name="title" 
-                    onChange={updateRewardState} 
+                    onChange={handleRewardInputChange} 
                     placeholder="Title"
                 />
                 <input type="text" 
                     value={reward.description}
                     name="description" 
-                    onChange={updateRewardState} 
+                    onChange={handleRewardInputChange} 
                     placeholder="Description"
                 />
                 <input type="number" 
                     value={reward.points}
                     name="points" 
-                    onChange={updateRewardState} 
+                    onChange={handleRewardInputChange} 
                     placeholder="Points" 
                 />
                 <input type="url" 
                     value={reward.images}
                     name="images" 
-                    onChange={updateRewardState} 
+                    onChange={handleRewardInputChange} 
                     placeholder="Image URL"
                 />
                 <div className="reward-form-actions">

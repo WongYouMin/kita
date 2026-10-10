@@ -48,7 +48,7 @@ function Rewards() {
     // ==========================================
 
     // Handle changes made to reward state
-    const updateRewardState = (event) => {
+    const handleRewardInputChange = (event) => {
         setReward((previous) => ({
             ...previous,
             [event.target.name] : event.target.value
@@ -152,6 +152,7 @@ function Rewards() {
     // ==========================================
 
     // Fetch and process rewards data
+    // TODO: rename to getRewards for more consistent naming
     const fetchRewardsData = async() => {
         const api = 'https://dummyjson.com/products';
         const response = await fetch(api);
@@ -289,7 +290,7 @@ function Rewards() {
                         handleAddReward={handleAddReward}
                         handleUpdateReward={handleUpdateReward}
                         reward={reward}
-                        updateRewardState={updateRewardState}
+                        handleRewardInputChange={handleRewardInputChange}
                         rewardFormError={rewardFormError}
                         discardRewardForm={discardRewardForm}
                       />
