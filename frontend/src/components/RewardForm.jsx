@@ -32,7 +32,7 @@ function RewardForm({editing, handleUpdateReward, handleAddReward, reward, handl
                     placeholder="Image URL"
                 />
                 <div className="reward-form-actions">
-                    <button type="submit">{editing ? 'Update' : 'Create'}</button>
+                    <button type="submit" className="form-submit">{editing ? 'Update' : 'Create'}</button>
                     <button type="button" onClick={discardRewardForm}>Cancel</button>
                 </div>
                 {rewardFormError.trim() ? 

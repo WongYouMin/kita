@@ -55,7 +55,7 @@ function Rewards() {
         }));
     };
 
-    // Handle add reward form submission
+    // Handle create reward form submission
     const handleAddReward = async(event) => {
         event.preventDefault();
        
@@ -244,6 +244,8 @@ function Rewards() {
     // Helper Functions
     // ==========================================
     
+    // TODO: Rename to validateRewardForm
+    // TODO: Update the error message to required
     // Validate reward
     const validateReward = () => {
         let validationError = "";
@@ -256,6 +258,7 @@ function Rewards() {
         return validationError;
     };
 
+    // TODO: Rename to clearRewardForm
     // Clear new reward state
     const clearReward = () => {
         setReward({
