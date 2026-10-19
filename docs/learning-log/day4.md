@@ -11,13 +11,13 @@
     - All properties name are string. Quote is only needed when properties defined are not valid identifier. Properties names that are not valid identifiers need to be accessed using bracket notation.
     - An object can contain properties of various data types.
     - Example:
-        - ```
-            const book = {
-                name: "Atomic Habit",
-                author: "James Clear",
-                pages: 320,
-                language: "English"
-            };
+        ```
+        const book = {
+            name: "Atomic Habit",
+            author: "James Clear",
+            pages: 320,
+            language: "English"
+        };
         ```
     - In the example, the book's properties are name, author, pages and language.
     - Properties act as the key to access its value.
