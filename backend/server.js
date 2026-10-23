@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 const { MongoClient, ObjectId } = require('mongodb');
@@ -16,6 +17,11 @@ const startServer = async() => {
         const db = client.db("kita_loyalty");
         const customers = db.collection("customers");
         const transactions = db.collection("transactions");
+
+        // Allow request from frontend
+        app.use(cors({
+            origin: 'http://localhost:5173'
+        }));
 
         // Parse incoming JSON request body into JavaScript values.
         app.use(express.json());
