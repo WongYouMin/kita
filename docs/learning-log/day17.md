@@ -2,7 +2,7 @@
 
 ## Day 17 (8 Oct 2026)
 
-### Kita MVP version 1: Dashboard Building
+### Kita MVP version 1: Dashboard and Rewards Feature Building
 - Learned about the importance of layout component in routing.
     - `<Layout />` is a user-defined functional component, which provides a shared layout for its nested routes.
     - The matched child route is rendered in `<Outlet />` within Layout component.

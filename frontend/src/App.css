@@ -60,6 +60,25 @@
   }
 }
 
+.customer-list{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+
+.customer-list-header,
+.customer-item{
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 2.5fr 1fr 1fr;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #dddddd20;
+}
+
+.customer-list-header > p{
+  font-weight: bolder;
+}
+
 .stat-card {
   border: 1px solid #ddd;
   padding: 20px;
@@ -103,14 +122,16 @@
   text-align: center;
 }
 
+.customers-header,
 .rewards-header {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+.customers-header > button,
+.customer-form-header > button,
 .show-add-reward-button {
   padding: 20;
   background-color: cornflowerblue;
@@ -122,13 +143,39 @@
   font-size: 1rem;
 }
 
+.customer-details form{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.customer-details-field{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.customer-details-field p {
+  text-align: left;
+  margin: 0;
+}
+
+.customer-details-field input{
+  font-size: 1rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.customer-form,
 .reward-form form{ 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 300px;
   gap: 1rem;
-  border: 1px solid #ddd;
   padding-left: 15rem;
   padding-right: 15rem;
   padding-bottom: 3rem;
@@ -136,18 +183,34 @@
   padding-top: 3rem;
 }
 
+.customer-form > input,
 .reward-form form > input{
   font-size: 1rem;
 }
 
+.customer-form-actions,
 .reward-form-actions{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
+.customer-form-actions button,
 .reward-form-actions button{
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.form-submit{
+  background-color: cornflowerblue;
+  border: none;
+  font-size: 1rem;
+}
+
+.form-actions{
   font-size: 1rem;
 }
 
@@ -158,16 +221,28 @@
 
 .delete-button{
   color: red;
+}
+
+.view-button,
+.edit-button{
+  color: white;
+}
+
+.view-button,
+.delete-button,
+.edit-button{
   background-color: transparent;
   border: none;
   font-size: 1.1rem;
 }
 
-.edit-button{
-  color: white;
+.back-button{
+  display: flex;
   background-color: transparent;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 #center {
