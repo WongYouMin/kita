@@ -122,6 +122,7 @@
   text-align: center;
 }
 
+.transactions-header,
 .customers-header,
 .rewards-header {
   display: flex;
@@ -130,6 +131,7 @@
   margin-bottom: 1rem;
 }
 
+.transactions-header > button,
 .customers-header > button,
 .customer-form-header > button,
 .show-add-reward-button {
@@ -169,11 +171,11 @@
   min-width: 0;
 }
 
+.transaction-form,
 .customer-form,
 .reward-form form{ 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   height: 300px;
   gap: 1rem;
   padding-left: 15rem;
@@ -183,11 +185,14 @@
   padding-top: 3rem;
 }
 
+.transaction-form input, select,
 .customer-form > input,
 .reward-form form > input{
+  text-align: center;
   font-size: 1rem;
 }
 
+.transaction-form-actions,
 .customer-form-actions,
 .reward-form-actions{
   display: flex;
@@ -196,6 +201,7 @@
   gap: 0.5rem;
 }
 
+.transaction-form-actions button,
 .customer-form-actions button,
 .reward-form-actions button{
   font-size: 1.1rem;
@@ -203,6 +209,26 @@
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
 }
+
+.transaction-list{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+
+.transaction-list-header,
+.transaction-item{
+  display: grid;
+  grid-template-columns: 1fr 0.6fr 0.3fr 0.5fr;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #dddddd20;
+}
+
+.transaction-list-header > p{
+  font-weight: bolder;
+}
+
 
 .form-submit{
   background-color: cornflowerblue;
