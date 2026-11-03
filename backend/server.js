@@ -5,6 +5,7 @@ const PORT = 3000;
 const { MongoClient, ObjectId } = require('mongodb');
 const transactionRouter = require('./routes/transactions');
 const customerRouter = require('./routes/customers');
+const rewardRouter = require('./routes/rewards');
 
 const uri = 'mongodb://127.0.0.1:27017/';
 const client = new MongoClient(uri);
@@ -17,6 +18,7 @@ const startServer = async() => {
         const db = client.db("kita_loyalty");
         const customers = db.collection("customers");
         const transactions = db.collection("transactions");
+        const rewards = db.collection("rewards");
 
         // Allow request from frontend
         app.use(cors({
@@ -28,8 +30,8 @@ const startServer = async() => {
 
         // Register API routes.
         app.use("/api/customers", customerRouter(customers, ObjectId));
-        app.use("/api/transactions", transactionRouter(transactions, customers, ObjectId));
-
+        app.use("/api/transactions", transactionRouter(transactions, customers, rewards, ObjectId));
+        app.use("/api/rewards", rewardRouter(rewards, ObjectId));
 
         app.get("/", (req, res) => {
             res.send("Kita Loyalty is connected");
