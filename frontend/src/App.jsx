@@ -6,6 +6,9 @@ import CustomerNew from "./pages/CustomerNew"
 import CustomerDetails from './pages/CustomerDetails'
 import Rewards from './pages/Rewards'
 import Transactions from './pages/Transactions'
+import TransactionList from "./pages/TransactionList"
+import AwardPoints from "./pages/AwardPoints"
+import RedeemReward from "./pages/RedeemReward"
 import Layout from "./components/Layout"
 function App() {
     return(
@@ -19,7 +22,11 @@ function App() {
                         <Route path=":customerId" element={<CustomerDetails/>} />
                     </Route>
                     <Route path="rewards" element={<Rewards/>}/>
-                    <Route path="transactions" element={<Transactions/>}/>
+                    <Route path="transactions" element={<Transactions/>}>
+                        <Route index element={<TransactionList/>} />
+                        <Route path="awardPoints" element={<AwardPoints/>} />
+                        <Route path="redeemReward" element={<RedeemReward/>} />
+                    </Route>
                 </Route>
             </Routes>
        </BrowserRouter>
